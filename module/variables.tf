@@ -2,12 +2,13 @@
 # REQUIRED VARAIBLES #
 ######################
 variable "name_VV" {
+  description = "Common Name"
   type = string
 }
 
 variable "location_VV" {
   type        = string
-  description = "Resources location in Azure"
+  description = "Location of the Resources"
 }
 
 variable "vnet_rg_VV" {
@@ -36,7 +37,6 @@ variable "kubernetes_version_VV" {
 variable "k8s_dns_zone_VV" {
   type        = string
   description = "private dns zone name"
-  default     = "privatelink.eastus.azmk8s.io"
 }
 variable "system_node_pool_config_VV" {
   type = object({
@@ -48,7 +48,7 @@ variable "system_node_pool_config_VV" {
     node_labels         = optional(map(string), {})
     tags                = optional(map(string), {})
   })
-  description = "system node pool configuration"
+  description = "System node pool configuration"
   default = {
     node_count          = 2
     vm_size             = "Standard_DS2_v2"
@@ -60,13 +60,13 @@ variable "system_node_pool_config_VV" {
 
 variable "network_policy_VV" {
   type        = string
-  description = "azure network policy "
+  description = "Azure network policy "
   default     = "azure"
 }
 
 variable "loadbalancer_sku_VV" {
   type        = string
-  description = "specified loadbalancer sku type"
+  description = "Specified Load balancer sku type"
   default     = "standard"
 }
 
@@ -83,29 +83,6 @@ variable "appgw_VV" {
   default     = ""
 }
 
-# variable "acr_rg" {
-#   type        = string
-#   description = "ACR resource group name"
-#   default     = "<Image-Name>"
-# }
-
-# variable "aks_publisher" {
-#   type        = string
-#   description = "The publisher of the solution.For example Microsoft. Changing this forces a new resource to be created."
-#   default     = "Microsoft"
-# }
-
-# variable "aks_product" {
-#   type        = string
-#   description = "The product name of the solution.For example OMSGallery/Containers. Changing this forces a new resource to be created."
-#   default     = "aksContainerInsights"
-# }
-
-# variable "acr_registry_id" {
-#   type        = string
-#   description = "ACR Container Registry ID"
-#   default     = "<Name of Subscription ID>"
-# }
 variable "dns_prefix_VV" {
   type        = string
   description = "Name for the DNS prefix"
@@ -114,12 +91,12 @@ variable "dns_prefix_VV" {
 
 variable "number_of_windows_node_pools_VV" {
   type        = number
-  description = "number of windows user node pool to add"
+  description = "Number of windows user node pool to add"
   default     = 0
 }
 
 variable "windows_node_pool_config_VV" {
-  description = "windows node pool configuration"
+  description = "Windows node pool configuration"
   type = list(object({
     node_count          = optional(number, 2)
     enable_auto_scaling = optional(bool, false)
@@ -139,7 +116,7 @@ variable "windows_node_pool_config_VV" {
 
 variable "number_of_linux_node_pools_VV" {
   type        = number
-  description = "number of linux user node pools to add"
+  description = "Number of linux user node pools to add"
   default     = 0
 }
 
@@ -176,6 +153,6 @@ variable "oidc_issuer_enabled_VV" {
 
 variable "tags_VV" {
   type        = map(string)
-  description = "mapping of tags key-value pairs"
+  description = "Mapping of tags key-value pairs"
   default     = {}
 }
