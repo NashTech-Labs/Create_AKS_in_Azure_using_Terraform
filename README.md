@@ -33,16 +33,16 @@ The following table lists the configurable parameters for the module with their 
 | system_node_pool_config_VV               | System node pool configuration                             |         | string       | Yes      |
 | network_policy_VV                        | Azure network policy                                       |         | string       | Yes      |
 | loadbalancer_sku_VV                      | Specified Load balancer sku type                           |         | string       | Yes      |
-| kv_VV                                    | Name of key vault                                          |         |              |          |
-| appgw_VV                                 | Name of application gateway in front of AKS cluster        |         |              |          |
-| dns_prefix_VV                            | Name for the DNS prefix                                    |         |              |          |
-| number_of_windows_node_pools_VV          | Number of windows user node pool to add                    |         | number       |          |
-| windows_node_pool_config_VV              | Windows node pool                                          |         | List(object) |          |
-| number_of_linux_node_pools_VV            | Number of linux user node pools to                         | 0       | number       |          |
-| linux_node_pool_config_VV                | linux node pool configuration                              |         | List(object) |          |
-| workload_identity_enabled_VV             | Defines if workload identity should be enabled on cluster. | true    | bool         |          |
-| oidc_issuer_enabled_VV                   | Defines if OIDC issuer should be enabled on                | true    | bool         |          |
-| tags_VV                                  | Mapping of tags key-value pairs                            |         | map(string)  |          |
+| kv_VV                                    | Name of key vault                                          |         | string       | Yes      |
+| appgw_VV                                 | Name of application gateway in front of AKS cluster        |         | string       | Yes      |
+| dns_prefix_VV                            | Name for the DNS prefix                                    |         | string       | Yes      |
+| number_of_windows_node_pools_VV          | Number of windows user node pool to add                    |         | number       | Yes      |
+| windows_node_pool_config_VV              | Windows node pool                                          |         | List(object) | Yes      |
+| number_of_linux_node_pools_VV            | Number of linux user node pools to                         | 0       | number       | Yes      |
+| linux_node_pool_config_VV                | linux node pool configuration                              |         | List(object) | Yes      |
+| workload_identity_enabled_VV             | Defines if workload identity should be enabled on cluster. | true    | bool         | Yes      |
+| oidc_issuer_enabled_VV                   | Defines if OIDC issuer should be enabled on                | true    | bool         | Yes      |
+| tags_VV                                  | Mapping of tags key-value pairs                            |         | map(string)  | Yes      |
 
 
 ---
